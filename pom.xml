@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- tag::spring-boot-starter-parent[] -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.3.0</version>
+    <relativePath/>
+  </parent>
+  <!-- end:spring-boot-starter-parent[] -->
+
+  <groupId>org.ralphsmeets.demo.bd.iba</groupId>
+  <artifactId>iba-aia</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>iba-aia</name>
+  <description>CQRS demo voor IBA Automatische Incasso Afspraken</description>
+  <packaging>pom</packaging>
+
+  <!-- tag::modules[] -->
+  <modules>
+    <!-- tag::mod-innen[] -->
+    <module>innen</module>
+    <!-- end::mod-innen[] -->
+    <!-- tag::mod-core-api[] -->
+    <module>core-api</module>
+    <!-- end::mod-core-api[] -->
+    <!-- tag::mod-token[] -->
+    <module>token</module>
+    <!-- end::mod-token[] -->
+  </modules>
+  <!-- end::modules[] -->
+
+  <!-- tag::properties[] -->
+  <properties>
+    <!-- tag::props-java21[] -->
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <java.version>21</java.version>
+    <!-- end::props-java21[] -->
+    <!-- tag::props-axonframework[] -->
+    <axon.version>4.9.4</axon.version>
+    <!-- end::props-axonframework[] -->
+  </properties>
+  <!-- end::properties[] -->
+
+  <!-- tag::dependencyManagement[] -->
+  <dependencyManagement>
+    <dependencies>
+      <!-- tag::deps-axon-bom[] -->
+      <dependency>
+        <groupId>org.axonframework</groupId>
+        <artifactId>axon-bom</artifactId>
+        <version>${axon.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!-- end::deps-axon-bom[] -->
+    </dependencies>
+  </dependencyManagement>
+  <!-- end::dependencyManagement[] -->
+</project>
